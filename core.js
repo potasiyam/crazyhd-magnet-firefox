@@ -7,16 +7,17 @@ function onError(error) {
 }
 
 function onGot(item) {
-    console.log(item);
-    var tracker = "";
-    if (item.tracker) {
-      tracker = item.tracker;
-    }
-    else if (item[0].tracker) {
-      tracker = item[0].tracker;
-    }
-    //   document.body.style.border = "10px solid " + tracker;
-    console.log(tracker);
+    // console.log(item);
+    // var tracker = "";
+    // if (item.tracker) {
+    //   tracker = item.tracker;
+    // }
+    // else if (item[0].tracker) {
+    //   tracker = item[0].tracker;
+    // }
+
+    // console.log(tracker);
+
     var str = document.querySelector(".wrapper a.btn-download").getAttribute("href");
 
     while ((m = regex.exec(str)) !== null) {
@@ -25,8 +26,11 @@ function onGot(item) {
             regex.lastIndex++;
         }
 
-        if(!!document.getElementsByClassName("btn-chumbok").length) {
-            document.getElementsByClassName("btn-chumbok").remove();
+        if(document.querySelectorAll(".btn-chumbok").length > 0) {
+            var buttons = document.querySelectorAll(".btn-chumbok");
+            for (i = 0; i < buttons.length; ++i) {
+                buttons[i].remove();
+            }
         }
 
         var aTag = document.createElement('A');
@@ -41,5 +45,9 @@ function onGot(item) {
 
 }
 
-var getting = browser.storage.local.get("tracker");
-getting.then(onGot, onError);
+onGot({});
+
+console.log(typeof browser.storage);
+
+// var getting = browser.storage.local.get("tracker");
+// getting.then(onGot, onError);
