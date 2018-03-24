@@ -1,82 +1,92 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <style >
-      body {
-        overflow-x: hidden;
-        /*font-family: "Fira Sans", sans-serif;*/
-      }
-      label {
-        /*display: block;*/
-      }
-      .panel {
-        min-width: 400px;
-      }
-      .wrapper {
-        /*padding: 15px*/
-      }
-
-button:hover:not(.pressed):not(.disabled):not(.focused) {
-  padding: 0 8px;
-}
-button:hover:active:not(.hover):not(.disabled):not(.focused) {
-  padding: 0 8px;
-}
-
-button.danger {
-  background-color:#e8432f;
-	border-color:#d92015;
-    color: #fff;
-}
-button.danger:hover:not(.pressed):not(.disabled):not(.focused) {
-	background-color: #d92015;
-    border-color: #c21d09;
-}
-button.danger:hover:active:not(.hover):not(.disabled):not(.focused) {
-	background-color:#c21d09;
-	border-color:#ab1908;
-}
-.remove_tracker {
-  width: 24px;
-}
-.panel-formElements-item {
-  margin-bottom: 5px;
-}
-    </style>
-  </head>
-
-  <body>
-    <form action="">
-      <div class="panel">
+    <style>
+        body {
+            overflow-x: hidden;
+            /*font-family: "Fira Sans", sans-serif;*/
+        }
         
-        <div class="panel-section panel-section-header">
-          <div class="icon-section-header"><img src="icons/icon-32.png"/></div>
-          <div class="text-section-header">CrazyHD trackers</div>
-        </div>
+        label {
+            /*display: block;*/
+        }
+        
+        .panel {
+            min-width: 400px;
+        }
+        
+        .wrapper {
+            /*padding: 15px*/
+        }
+        
+        button:hover:not(.pressed):not(.disabled):not(.focused) {
+            padding: 0 8px;
+        }
+        
+        button:hover:active:not(.hover):not(.disabled):not(.focused) {
+            padding: 0 8px;
+        }
+        
+        button.danger {
+            background-color: #e8432f;
+            border-color: #d92015;
+            color: #fff;
+        }
+        
+        button.danger:hover:not(.pressed):not(.disabled):not(.focused) {
+            background-color: #d92015;
+            border-color: #c21d09;
+        }
+        
+        button.danger:hover:active:not(.hover):not(.disabled):not(.focused) {
+            background-color: #c21d09;
+            border-color: #ab1908;
+        }
+        
+        .remove_tracker {
+            width: 24px;
+        }
+        
+        .panel-formElements-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
 
-        <div class="panel-section panel-section-formElements">
-          <label for="name01">Trackers</label>
-          <div id="tracker_fields">
-            <div class="panel-formElements-item">
-              <input type="text" value="" class="field_input" /><button class="remove_tracker danger">x</button>
+<body>
+    <form action="">
+        <div class="panel">
+
+            <div class="panel-section panel-section-header">
+                <div class="icon-section-header"><img src="icons/icon-32.png" /></div>
+                <div class="text-section-header">CrazyHD trackers</div>
             </div>
-          </div>
-          <div class="panel-formElements-item">
-            <button id="add_tracker" class="">+ Add another</button>
-          </div>
-        </div>
 
-        <div class="panel-section panel-section-footer">
-          <div id="save_trackers" class="panel-section-footer-button default">Save</div>
+            <div class="panel-section panel-section-formElements">
+                <label for="name01">Trackers</label>
+                <div id="tracker_fields">
+                    <div class="panel-formElements-item">
+                        <input type="text" value="" class="field_input" /><button class="remove_tracker danger">x</button>
+                    </div>
+                </div>
+                <div class="panel-formElements-item">
+                    <button id="add_tracker" class="">+ Add another</button>
+                </div>
+            </div>
+
+            <div class="panel-section panel-section-footer">
+                <div id="save_trackers" class="panel-section-footer-button default">Save</div>
+                <div id="reset_trackers" class="panel-section-footer-button">Reset</div>
+            </div>
         </div>
-      </div>
     </form>
 
-    
+
     <script src="options.js"></script>
 
-  </body>
+</body>
 
 </html>
