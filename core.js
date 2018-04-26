@@ -49,3 +49,20 @@ getting.then(function(data) {
     onGot({});
 });
 // getting.then(onGot, onError);
+function remove_tlink() {
+
+    tlinks = document.querySelectorAll('.tlink');
+    var tfid = '';
+    tlinks.forEach(function(item, index) {
+        item.className = '';
+        tfid = item.getAttribute('tfid') + '';
+        item.setAttribute('href', 'http://www.crazyhd.com/index.php?page=topics&id=' + tfid);
+        item.setAttribute('onclick', '');
+    });
+}
+
+remove_tlink();
+
+setTimeout(() => {
+    remove_tlink();
+}, 5000);
