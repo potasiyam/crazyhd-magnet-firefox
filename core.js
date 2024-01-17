@@ -1,7 +1,5 @@
 const regex = /id=(\w+)&.*f=(\w+.+).torrent/g;
 
-
-
 function onError(error) {
     console.log(`Error: ${error}`);
 }
@@ -35,16 +33,14 @@ function onGot(item) {
         aTag.innerHTML = "<i class=\"fa fa-magnet\"></i> Magnet";
 
         document.querySelector(".wrapper a.btn-download").parentNode.appendChild(aTag);
-
     }
-
 }
 
 var getting = browser.storage.local.get("trackers");
 
-getting.then(function(data) {
+getting.then(function (data) {
     onGot(data);
-}, function(error) {
+}, function (error) {
     console.log('error', error);
     onGot({});
 });

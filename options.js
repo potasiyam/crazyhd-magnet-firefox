@@ -38,7 +38,6 @@ function addField(e) {
     div.getElementsByTagName("button")[0].addEventListener("click", removeField);
 
     field_parent.appendChild(div);
-
 }
 
 function removeField(e) {
@@ -53,7 +52,7 @@ function restoreOptions() {
 
         if (typeof result.trackers !== "undefined" && result.trackers.length > 0) {
             field_parent.innerHTML = '';
-            result.trackers.forEach(function(element) {
+            result.trackers.forEach(function (element) {
                 var s = '<input type="text" value="' + element + '" class="field_input" /><button class="remove_tracker danger">x</button>'; // HTML string
 
                 var div = document.createElement('div');
@@ -71,7 +70,6 @@ function restoreOptions() {
 
     var getting = browser.storage.local.get("trackers");
     getting.then(setCurrentChoice, onError);
-
 }
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
@@ -80,7 +78,5 @@ document.querySelector("#reset_trackers").addEventListener("click", resetOptions
 document.querySelector("#add_tracker").addEventListener("click", addField);
 var remove_buttons = document.querySelectorAll(".remove_tracker");
 for (i = 0; i < remove_buttons.length; ++i) {
-
     remove_buttons[i].addEventListener("click", removeField);
-
 }
